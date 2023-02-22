@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Space Invader</title>
+  <link rel="stylesheet" href="../decoration/menu.css">
+  <link rel="stylesheet" href="../decoration/option.css">
+  <style></style>
+</head>
+<body>
+
+  <div class="page">
+    <h1>OPTION</h1>
+    <form id="formulaire-option">
+      <fieldset>
+        <legend>Son Du Jeu</legend>
+
+        <div hidden>
+          <label for="id"></label>
+          <input type="text" id="id">
+        </div>
+
+        <div>
+            <label>Musique</label>
+            <label class="switch">
+                <input type="checkbox" id="musique">
+                <span class="slider round"></span>
+              </label>
+        </div>
+        
+        <div>
+            <label>Effets Sonores</label>
+            <label class="switch">
+                <input type="checkbox" id="effets-sonores">
+                <span class="slider round"></span>
+              </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Mon Pseudo</legend>
+        <div>
+          <label for="nom">Votre Nom</label>
+          <input type="text" id="nom"></input>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer lesModification"/>
+    </form>
+    <a href="#" class="action">Annuler et Revenir au Menu</a> 
+
+</body>
+</html>

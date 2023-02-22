@@ -1,0 +1,101 @@
+:root{
+    --grille-largueur: 600px;
+    --grille-longueur:600px;
+    --cellule-largueur:40px;
+    --cellule-longueur: 40px;
+    --bouton-largueur: 50px;
+    --bouton-longueur: 150px;;
+}
+
+.grille{
+    width: var(--grille-largueur);
+    height: var(--grille-longueur);
+    border: solid white 1px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+}
+
+.grille div{
+    margin:auto;
+    position:relative;
+    width: var(--cellule-largueur);
+    height: var(--cellule-longueur);
+}
+.envahisseur{
+
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.joueur{
+
+    background-color: yellowgreen;
+    border-radius: 10px;
+}
+
+.tire{
+
+    background-color: blue;
+}
+
+.explosion{
+
+    background-color: red;
+
+}
+.pointage{
+    text-align: center;
+    top: 160px;
+    left: 1000px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255,139,253,0);
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+     background-color: #000000;
+     color:black;
+     font-size: 300%;
+}
+.resultat{
+    text-align: center;
+    top: 160px;
+    left: 1000px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255,139,253,0);
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+     background-color: #000000;
+     color:black;
+     font-size: 300%;
+}
+.bouton-gauche{
+    display:table-cell;
+    background-color: black;
+    width: var(--bouton-longueur);
+    height: var(--bouton-largueur);
+}
+.bouton-droit{
+    right: -30%;
+    bottom: 30%;
+    display:table-cell;
+    background-color: black;
+    width: var(--bouton-longueur);
+    height: var(--bouton-largueur);
+}
+.bouton-feu{
+    display:table-cell;
+    right: -175%;
+    background-color: black;
+    width: var(--bouton-longueur);
+    height: var(--bouton-largueur);
+}
+.controle-direction{
+    display: table-row;
+    width: var(--grille-longueur);
+}
+.image-jeu{    
+    width: var(--bouton-longueur);
+    height: var(--bouton-largueur);
+}
+.controle-jeu{
+    display: table;
+    background-color: rgb(156, 134, 106);
+    width: var(--grille-longueur);
+}

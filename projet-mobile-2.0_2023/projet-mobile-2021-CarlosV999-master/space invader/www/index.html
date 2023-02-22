@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clone Space Invader</title>
+    <script src="lib/createjs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="decoration/index.css">
+    <link src="decoration/illustration/Mrs_Kichinto_6px.woff" rel="stylesheet">
+    <script src="vue/VueMenu.js"></script>
+    <script src="modele/Joueur.js"></script>
+    <script src="donnees/JeuDAO.js"></script>
+    <script src="donnees/ClassementDAO.js"></script>
+    <script src="vue/VueClassement.js"></script>
+    <script src="vue/VueJeu.js"></script>
+    <script src="vue/VueFinDuJeu.js"></script>
+    <script src="vue/VueOption.js"></script>
+    <script defer src="Application.js"></script>
+    <!---<script src='lib/zingtouch.min.js'></script>-->
+</head>
+<body>
+    <div id="page-chargement-application"> Chargement de l'applis</div>
+
+    <script type="plain/text" id="html-vue-menu">
+      <div id="body">
+        <div class="frame1"> 
+            <h1 href="#">Clone Space Invader</h1>
+        </div> 
+        <div class="frame">
+            <div class="btn-group">
+                <a href="#jouer" class="btn-menu"> Jouer</a>
+                <a href="#options" class="btn-menu"> Options</a>
+                <a href="#classement" class="btn-menu"> Classement</a>
+            </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="plain/text" id="html-vue-classement">
+        <div class="frame1"> 
+            <h1>Classement</h1>
+        </div> 
+        <div id="container">
+            <div class="row">
+                <div class="position">{Classement.position}</div><div class="name">{Classement.nom}</div><div class="score">{Classement.score}</div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-menu">Retour au menu</a>
+        
+    </script>
+
+  <script type="plain/text" id="html-vue-option">
+
+    <div class="page">
+      <h1>OPTION</h1>
+      <form id="formulaire-option">
+        <fieldset>
+          <legend>Son Du Jeu</legend>
+  
+          <div hidden>
+            <label for="id"></label>
+            <input type="text" id="id">
+          </div>
+  
+          <div hidden>
+            <label for="postion"></label>
+            <input type="text" id="position">
+          </div>
+
+          <div hidden>
+            <label for="score"></label>
+            <input type="text" id="score">
+          </div>
+
+          <div>
+              <label>Musique</label>
+              <label class="switch">
+                  <input type="checkbox" id="musique">
+                  <span class="slider round"></span>
+                </label>
+          </div>
+          
+          <div>
+              <label>Effets Sonores</label>
+              <label class="switch">
+                  <input type="checkbox" id="effets-sonores">
+                  <span class="slider round"></span>
+                </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Mon Pseudo</legend>
+          <div>
+            <label for="nom">Votre Nom</label>
+            <input type="text" id="nom"></input>
+          </div>
+        </fieldset>
+        <input class="action" type="submit" id="enregistrer" value="Enregistrer lesModification"/>
+      </form>
+      <a href="#" class="action">Annuler et Revenir au Menu</a> 
+  </script>
+
+  <script type="plain/text" id="html-vue-fin-du-jeu">
+    <h1>Fin de la partie!</h1>
+
+    <div id="container">
+        <div class="Record">Record: {FinDuJeu.record}</div>
+        <div class="Score">Score: {FinDuJeu.score}</div>
+    </div>
+
+    <div class="frame">
+        <div class="btn-group">
+          <a href="#jouer" class="btn-menu"> Rejouer</a>
+          <a href="#" class="btn-menu"> Menu</a>
+        </div>
+    </div>
+   </script>
+
+   <script type="plain/text" id="html-vue-jeu">
+    <h1 class="resultat">Tuez les Tous!!!</h1>
+    <h2 class="pointage" id="pointage">Score: 0</h2>
+    <div class="grille"></div> 
+    <div class="controle-jeu">      
+      <div class="controle-direction">
+        <div id="bouton-gauche" class="bouton-gauche"><img class="image-jeu" src="img\fleche-gauche.png"><img></div>
+        <div id="bouton-droit" class="bouton-droit"><img class="image-jeu" src="img\fleche-droite.png"><img></div>
+        <div id="bouton-feu" class="bouton-feu"></div>
+      </div>    
+    </div>
+</script>
+
+</body>
+</html>
