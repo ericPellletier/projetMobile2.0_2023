@@ -6,6 +6,15 @@ class Accesseur{
 
 		public static function initialiser()
 		{
+            $usager = 'root';
+			$motdepasse = '';
+			$hote = 'localhost';
+			$base = 'asteroidJeu';
+            $charset = 'utf8mb4';
+			$dsn = 'mysql:dbname='.$base.';host='.$hote.';charset='.$charset;
+			JoueurDAO::$basededonnees = new PDO($dsn, $usager, $motdepasse,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
+			JoueurDAO::$basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            /*
 			$usager = 'sqlpied';
 			$motdepasse = '$pied123';
 			$hote = 'localhost';
@@ -14,6 +23,7 @@ class Accesseur{
 			$dsn = 'mysql:dbname='.$base.';host='.$hote.';charset='.$charset;
 			JoueurDAO::$basededonnees = new PDO($dsn, $usager, $motdepasse,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 			JoueurDAO::$basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            */
 		}
 }
 
