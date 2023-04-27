@@ -5,7 +5,7 @@ class Accesseur{
     public static $basededonnees = null;
 
 		public static function initialiser()
-		{
+		{ /*
             $usager = 'root';
 			$motdepasse = '';
 			$hote = 'localhost';
@@ -14,7 +14,7 @@ class Accesseur{
 			$dsn = 'mysql:dbname='.$base.';host='.$hote.';charset='.$charset;
 			JoueurDAO::$basededonnees = new PDO($dsn, $usager, $motdepasse,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 			JoueurDAO::$basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            /*
+            */
 			$usager = 'sqlpied';
 			$motdepasse = '$pied123';
 			$hote = 'localhost';
@@ -23,7 +23,7 @@ class Accesseur{
 			$dsn = 'mysql:dbname='.$base.';host='.$hote.';charset='.$charset;
 			JoueurDAO::$basededonnees = new PDO($dsn, $usager, $motdepasse,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 			JoueurDAO::$basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            */
+            
 		}
 }
 
@@ -40,4 +40,11 @@ class JoueurDAO extends Accesseur{
         foreach($joueursTableau as $joueurTableau) $joueurs[] = new Joueur($joueurTableau);
         return $joueurs;
     }
+
+	public static function enRegistrerPoints($point, $idJoueur)
+	{
+		$ajoutPointage = JoueurDAO::$basededonnees->prepare("UPDATE joueur SET score = $point WHERE id  = $idJoueur");
+		$ajoutPointage->execute();
+
+	}
 }
